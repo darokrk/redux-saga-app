@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import store from "./store/index";
 
-import inputText from "./actions/inputText";
 import addNote from "./actions/addNote";
 import removeNote from "./actions/removeNote";
 
