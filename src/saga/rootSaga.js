@@ -1,10 +1,10 @@
-// import { getDataSaga } from "./sagas";
+import { takeLatest, call } from "redux-saga/effects";
+import { ADD_NOTE } from "../actions/addNote";
 
 export function* rootSaga() {
-  yield console.log("SAGA");
-  console.log("1");
-  yield console.log("SAGA 2");
-  console.log("2");
-  yield console.log("SAGA 3");
-  console.log("3");
+  yield takeLatest(ADD_NOTE, addNoteSaga);
+}
+
+function* addNoteSaga({ note }) {
+  yield call(console.log, note);
 }

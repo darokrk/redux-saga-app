@@ -75,7 +75,6 @@ class App extends Component {
 
   handleDelete = e => {
     store.dispatch(removeNote(parseInt(e.target.id)));
-    console.log(store.getState());
   };
 
   render() {
@@ -125,7 +124,10 @@ class App extends Component {
   }
 }
 
-const mapStatetoProps = ({ text, notes }) => ({ text, notes });
+const mapStatetoProps = ({ text, notes }) => ({
+  text,
+  notes: Object.values(notes)
+});
 
 export default connect(mapStatetoProps)(App);
 
